@@ -91,9 +91,23 @@ This schedule will be used to keep track of your progress throughout the week an
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Component                 | Priority | Estimated Time | Time Invested | Actual Time |
+| ------------------------- | :------: | :------------: | :-----------: | :---------: |
+| Proposal                  |    H     |      2hrs      |     hrs      |    hrs     |
+| Airtable setup            |    H     |      1hrs      |     hrs      |    hrs     |
+| Data population (homepage)|    H     |      3hrs      |     hrs      |    hrs     |
+| Navbar routing            |    H     |      1hrs      |     hrs      |    hrs     |
+| Clickable icons/titles    |    H     |      2hrs      |     hrs      |    hrs     |
+| Form creation             |    H     |      4hrs      |     hrs      |    hrs     |
+| Book details page         |    H     |      3hrs      |     hrs      |    hrs     |
+| Book list (separate piles)|    H     |      3hrs      |     hrs      |    hrs     |
+| Edit book functionality   |    H     |      4hrs      |     hrs      |    hrs     |
+| Delete book functionality |    H     |      2hrs      |     hrs      |    hrs     |
+| Google Books API          |    H     |      6hrs      |     hrs      |    hrs     |
+| Style homepage            |    H     |      4hrs      |     hrs      |    hrs     |
+| Style book detail page    |    H     |      4hrs      |     hrs      |    hrs     |
+| Style form  page          |    H     |      4hrs      |     hrs      |    hrs     |
+| Total                     |    H     |      43hrs     |     hrs      |    hrs     |
 
 ## SWOT Analysis
 

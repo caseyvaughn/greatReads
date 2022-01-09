@@ -9,15 +9,12 @@ greatReads is an Airtable and React build that allows the user to track their re
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+![Homepage](/Homepage.png)
+![Form](/Form.png)
 
 ## Component Hierarchy
 
 ![component hierarcy](/ComponentHierarchy.png)
-![components hierarchy](/greatReads/blob/main/ComponentHierarchy.png)
-![components hierarchy](/assets/ComponentHierarchy.png)
-![ComponentHierarchy](https://user-images.githubusercontent.com/91965654/148701076-a3f2890b-dc47-43dd-8ab2-5d4297a5d77a.png)
-
 
 ## API and Data Sample
 

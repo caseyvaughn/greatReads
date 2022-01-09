@@ -15,6 +15,7 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 
 ! [component hierarcy] (/ComponentHierarchy.png)
 ! [components hierarchy] (/greatReads/blob/main/ComponentHierarchy.png)
+! [components hierarchy] (/assets/ComponentHierarchy.png)
 
 ## API and Data Sample
 

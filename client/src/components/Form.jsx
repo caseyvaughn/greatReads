@@ -1,8 +1,10 @@
 
-import StartDatePicker from "./StartDatePicker";
+// import StartDatePicker from "./StartDatePicker";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
+// import { getValue } from "@testing-library/user-event/dist/utils";
+// import AddBook from "./AddBook";
 
 
 export default function Form(props) {
@@ -10,11 +12,12 @@ export default function Form(props) {
   const { handleSubmit, control, errors } = useForm();
   //may need to add handle text input as well ??????
 
- 
-  console.log(props);
   return (
     <div>
-      <form onSubmit={props.handleSubmit}>
+      {/* <form onSubmit={props.handleSubmit}> */}
+      <form onSubmit={handleSubmit(data=>console.log(data))}>
+
+
         <label>Title</label>
         <input
           id="title"
@@ -31,27 +34,27 @@ export default function Form(props) {
           onChange={props.handleTextInput} />
         <br />
 
+        
         {/* <label>Start Date</label>
+        <Controller
+          name="startDate"
+          control={control}
+          defaultValue={null} 
+          render={({ field }) => (
+            <DatePicker
+              onChange={(e) => field.onChange = (e)}
+              selected={field.value}
+              placeholderText="select start date"
+            />
+          )}/> */}
+
+          <label>Start Date</label>
         <input
           id="startDate"
           value={startDate}
           placeholder="add start date"
           onChange={props.handleTextInput} />
-        <br /> */}
-        <label>Start Date</label>
-        <Controller
-          name="startDate"
-          control={control}
-          defaultValue={null} 
-          render={
-            ({ onChange, value }) =>
-              <DatePicker
-                onChange={props.handleTextInput}
-                selected={value}
-                placeholder="select start date"/>
-          }/>
-
-        {/* <StartDatePicker /> */}
+        <br />
 
         <label>End Date</label>
         <input

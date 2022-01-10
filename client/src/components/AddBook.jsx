@@ -5,11 +5,11 @@ import Form from "./Form";
 
 const defaultInput = {
   title: "",
-  // author: "",
-  // startDate: "",
-  // endDate: "",
-  // stars: "",
-  // review: "",
+  author: "",
+  startDate: "",
+  endDate: "",
+  stars: "",
+  review: "",
 }
 export default function AddBook() {
   const [input, setInput] = useState(defaultInput)
@@ -31,6 +31,14 @@ export default function AddBook() {
     }));
   };
 
+  const handleDateInput = (e) =>{
+    const { id, value } = e.target;
+    setInput((prevInput) => ({
+      ...prevInput,
+      [id]: value,
+    }))
+  }
+
   return (
     <div>
       Add a new character!
@@ -38,6 +46,7 @@ export default function AddBook() {
         input={input}
         handleTextInput={handleTextInput}
         handleSubmit={handleSubmit}
+        handleDateInput={handleDateInput}
         type={"Create"}/>
     </div>
   )

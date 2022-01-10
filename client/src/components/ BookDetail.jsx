@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams} from "react-router-dom";
 import api from '../services/apiConfig/index.js';
+import Delete from "./Delete.jsx";
 
 
 export default function BookDetail() {
@@ -24,6 +25,8 @@ export default function BookDetail() {
       <h5>{book.fields?.endDate}</h5>
       <h5>{book.fields?.stars}</h5>
       <p>{book.fields?.review}</p>
+
+      <Delete id={id}/>
     </div>
   )
 }

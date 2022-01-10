@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import BookList from './components/BookList';
 import BookDetail from './components/ BookDetail';
+import Navbar from './components/Navbar';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       {/* <header className="App-header">
         greatReads
       </header> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<BookList />} />
         <Route path="/books/:id" element={<BookDetail />} />

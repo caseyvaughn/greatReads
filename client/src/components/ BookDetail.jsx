@@ -19,6 +19,7 @@ export default function BookDetail() {
   return (
     <div>
       <h4>{book.fields?.title}</h4>
+      <h5>{book.fields?.author}</h5>
       <h5>{book.fields?.startDate}</h5>
       <h5>{book.fields?.endDate}</h5>
       <h5>{book.fields?.stars}</h5>

@@ -1,5 +1,16 @@
+
+import StartDatePicker from "./StartDatePicker";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useForm, Controller } from "react-hook-form";
+
+
 export default function Form(props) {
-  const { title, author, startDate, endDate, stars, review} = props.input;
+  const { title, author, startDate, endDate, stars, review } = props.input;
+  const { handleSubmit, control, errors } = useForm();
+  //may need to add handle text input as well ??????
+
+ 
   console.log(props);
   return (
     <div>
@@ -20,13 +31,27 @@ export default function Form(props) {
           onChange={props.handleTextInput} />
         <br />
 
-        <label>Start Date</label>
+        {/* <label>Start Date</label>
         <input
           id="startDate"
           value={startDate}
           placeholder="add start date"
           onChange={props.handleTextInput} />
-        <br />
+        <br /> */}
+        <label>Start Date</label>
+        <Controller
+          name="startDate"
+          control={control}
+          defaultValue={null} 
+          render={
+            ({ onChange, value }) =>
+              <DatePicker
+                onChange={props.handleTextInput}
+                selected={value}
+                placeholder="select start date"/>
+          }/>
+
+        {/* <StartDatePicker /> */}
 
         <label>End Date</label>
         <input

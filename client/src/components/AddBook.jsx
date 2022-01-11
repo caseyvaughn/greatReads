@@ -34,6 +34,7 @@ export default function AddBook() {
 
   //how to handledateinput
   const handleDateInput = (id, date) => {
+    //took from stack overflow: https://stackoverflow.com/questions/11591854/format-date-to-mm-dd-yyyy-in-javascript
     const formattedDate = ((date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear()
     setInput((prevInput) => ({
       ...prevInput,
@@ -42,14 +43,14 @@ export default function AddBook() {
     )
   }
 
-  //handle star input
-  // const handleStarRating = (rate: number) => {
-  //   const { id, value } = e.target;
-  //   setInput((prevInput) => ({
-  //     ...prevInput,
-  //     [id]: value,
-  //   }))
-  // }
+  // handle star input
+  const handleStarInput = (e) => {
+    const { id, valueAsNumber } = e.target;
+    setInput((prevInput) => ({
+      ...prevInput,
+      [id]: valueAsNumber,
+    }))
+  }
 
   return (
     <div>
@@ -59,6 +60,7 @@ export default function AddBook() {
         handleTextInput={handleTextInput}
         handleSubmit={handleSubmit}
         handleDateInput={handleDateInput}
+        handleStarInput={handleStarInput}
         type={"Create"}/>
     </div>
   )

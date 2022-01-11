@@ -26,39 +26,28 @@ export default function Form(props) {
           onChange={props.handleTextInput} />
         <br />
 
-        {/* <label>Author</label>
+        <label>Author</label>
         <input
           id="author"
           value={author}
           placeholder="add author"
           onChange={props.handleTextInput} />
-        <br /> */}
+        <br />
 
-        
         <label>Start Date</label>
         <Controller
           id="startDate"
-          // name="startDate"
           control={control}
           defaultValue={null} 
           
           render={({ field }) => (
             <DatePicker
               dateFormat = 'MM/dd/yyyy'
-              // onChange={(date) => { props.handleDateInput("startDate", date); props.handleDateInput("endDate", date) }}
               onChange={(date) => { props.handleDateInput("startDate", date)}}
               placeholderText="select start date"
               value={startDate}
             />
           )} /> 
-        
-        {/* <label>Start Date</label>
-        <input
-          id="startDate"
-          value={startDate}
-          placeholder="add start date"
-          onChange={props.handleTextInput} />
-        <br />  */}
         
         <label>End Date</label>
         <Controller
@@ -74,25 +63,14 @@ export default function Form(props) {
               value={endDate}
             />
           )} /> 
-        
-
-
-      
-
-        {/* <label>End Date</label>
-        <input
-          id="endDate"
-          value={endDate}
-          placeholder="add end date"
-          onChange={props.handleTextInput} />
-        <br />  */}
-{/* 
+       
         <label>Stars</label>
         <input
           id="stars"
+          type="number"
           value={stars}
           placeholder="add stars"
-          onChange={props.handleTextInput} />
+          onChange={props.handleStarInput} />
         <br />
 
         <label>Review</label>
@@ -101,7 +79,7 @@ export default function Form(props) {
           value={review}
           placeholder="add review"
           onChange={props.handleTextInput} />
-        <br /> */} 
+        <br /> 
         
         <button>{props.type} Book</button>
 

@@ -5,11 +5,11 @@ import Form from "./Form";
 
 const defaultInput = {
   title: "",
-  // author: "",
+  author: "",
   startDate: "",
   endDate: "",
-  // stars: "",
-  // review: "",
+  stars: "",
+  review: "",
 }
 export default function AddBook() {
   const [input, setInput] = useState(defaultInput)
@@ -20,8 +20,8 @@ export default function AddBook() {
     const fields = input;
     const res = await api.post("/", { fields });
     console.log(res.data);
-    // setInput(defaultInput);
-    // navigate("/");
+    setInput(defaultInput);
+    navigate("/");
     console.log(input);
   }
   const handleTextInput = (e) => {
@@ -31,10 +31,9 @@ export default function AddBook() {
       [id]: value,
     }));
   };
-
-  //how to handledateinput
   const handleDateInput = (id, date) => {
-    //took from stack overflow: https://stackoverflow.com/questions/11591854/format-date-to-mm-dd-yyyy-in-javascript
+    //need to reformat the date from long string to DD-MM-YYY
+    //took formatter from stack overflow: https://stackoverflow.com/questions/11591854/format-date-to-mm-dd-yyyy-in-javascript
     const formattedDate = ((date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear()
     setInput((prevInput) => ({
       ...prevInput,
@@ -42,8 +41,6 @@ export default function AddBook() {
     })
     )
   }
-
-  // handle star input
   const handleStarInput = (e) => {
     const { id, valueAsNumber } = e.target;
     setInput((prevInput) => ({
@@ -54,14 +51,13 @@ export default function AddBook() {
 
   return (
     <div>
-      Add a new character!
       <Form
         input={input}
         handleTextInput={handleTextInput}
         handleSubmit={handleSubmit}
         handleDateInput={handleDateInput}
         handleStarInput={handleStarInput}
-        type={"Create"}/>
+        type={"Add"}/>
     </div>
   )
 }

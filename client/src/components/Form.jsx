@@ -1,21 +1,14 @@
-
-// import StartDatePicker from "./StartDatePicker";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
-// import { getValue } from "@testing-library/user-event/dist/utils";
-// import AddBook from "./AddBook";
+import { useForm, Controller } from "react-hook-form";
 
 
 export default function Form(props) {
   const { title, author, startDate, endDate, stars, review } = props.input;
   const { handleSubmit, control, errors } = useForm();
-  //may need to add handle text input as well ??????
-  // const { register, handleSubmit, errors, control } = useForm();
-
+ 
   return (
     <div>
-      
       <form onSubmit={props.handleSubmit}>
 
         <label>Title</label>
@@ -39,7 +32,6 @@ export default function Form(props) {
           id="startDate"
           control={control}
           defaultValue={null} 
-          
           render={({ field }) => (
             <DatePicker
               dateFormat = 'MM/dd/yyyy'
@@ -51,10 +43,9 @@ export default function Form(props) {
         
         <label>End Date</label>
         <Controller
-          name="endDate"
+          id="endDate"
           control={control}
           defaultValue={null} 
-          
           render={({ field }) => (
             <DatePicker
               dateFormat = 'MM/dd/yyyy'
@@ -82,7 +73,6 @@ export default function Form(props) {
         <br /> 
         
         <button>{props.type} Book</button>
-
       </form>
     </div>
   )

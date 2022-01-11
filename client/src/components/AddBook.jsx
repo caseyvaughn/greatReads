@@ -49,7 +49,7 @@ export default function AddBook() {
     console.log(formattedRating);
     setInput((prevInput) => ({
       ...prevInput,
-      [id]: rating,
+      [id]: formattedRating,
     }))
   }
 

@@ -59,7 +59,7 @@ export default function Form(props) {
         <label>Stars</label>
         <Rating
           // onClick={console.log("star rating")}
-          onClick={(rating)=>{props.handleStarInput("starRating", rating)}}
+          onClick={(rating)=>{props.handleStarInput("stars", rating)}}
           // ratingValue={rating}
           // onClick={props.handleStarInput; console.log("star rating")}
           />

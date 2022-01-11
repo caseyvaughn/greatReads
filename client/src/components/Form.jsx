@@ -36,34 +36,56 @@ export default function Form(props) {
 
         
         <label>Start Date</label>
-
         <Controller
-          name="startDate"
+          id="startDate"
+          // name="startDate"
           control={control}
           defaultValue={null} 
+          
           render={({ field }) => (
             <DatePicker
               dateFormat = 'MM/dd/yyyy'
-              onChange={(date) => { props.handleDateInput("startDate", date); props.handleDateInput("endDate", date) }}
+              // onChange={(date) => { props.handleDateInput("startDate", date); props.handleDateInput("endDate", date) }}
+              onChange={(date) => { props.handleDateInput("startDate", date)}}
               placeholderText="select start date"
+              value={startDate}
             />
-          )}/> 
-
-        <label>Start Date</label>
+          )} /> 
+        
+        {/* <label>Start Date</label>
         <input
           id="startDate"
           value={startDate}
           placeholder="add start date"
           onChange={props.handleTextInput} />
-        <br />
-
+        <br />  */}
+        
         <label>End Date</label>
+        <Controller
+          name="endDate"
+          control={control}
+          defaultValue={null} 
+          
+          render={({ field }) => (
+            <DatePicker
+              dateFormat = 'MM/dd/yyyy'
+              onChange={(date) => {props.handleDateInput("endDate", date)}}
+              placeholderText="select end date"
+              value={endDate}
+            />
+          )} /> 
+        
+
+
+      
+
+        {/* <label>End Date</label>
         <input
           id="endDate"
           value={endDate}
           placeholder="add end date"
           onChange={props.handleTextInput} />
-        <br />
+        <br />  */}
 {/* 
         <label>Stars</label>
         <input

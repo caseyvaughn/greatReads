@@ -9,14 +9,15 @@ import { useForm, Controller, SubmitHandler } from "react-hook-form";
 
 export default function Form(props) {
   const { title, author, startDate, endDate, stars, review } = props.input;
-  const { handleSubmit, control, errors } = useForm();
+  // const { handleSubmit, control, errors } = useForm();
   //may need to add handle text input as well ??????
-  // const { register, handleSubmit, errors, control } = useForm();
+  const { register, handleSubmit, errors } = useForm();
 
   return (
     <div>
-      
-      <form onSubmit={props.handleSubmit}>
+      {/* <form onSubmit={props.handleSubmit}> */}
+      <form onSubmit={handleSubmit(data=>console.log(data))}>
+
 
         <label>Title</label>
         <input
@@ -26,30 +27,29 @@ export default function Form(props) {
           onChange={props.handleTextInput} />
         <br />
 
-        {/* <label>Author</label>
+        <label>Author</label>
         <input
           id="author"
           value={author}
           placeholder="add author"
           onChange={props.handleTextInput} />
-        <br /> */}
+        <br />
 
         
-        <label>Start Date</label>
-
+        {/* <label>Start Date</label>
         <Controller
           name="startDate"
           control={control}
           defaultValue={null} 
           render={({ field }) => (
             <DatePicker
-              dateFormat = 'MM/dd/yyyy'
-              onChange={(date) => { props.handleDateInput("startDate", date); props.handleDateInput("endDate", date) }}
+              onChange={(e) => field.onChange = (e)}
+              selected={field.value}
               placeholderText="select start date"
             />
-          )}/> 
+          )}/> */}
 
-        <label>Start Date</label>
+          <label>Start Date</label>
         <input
           id="startDate"
           value={startDate}
@@ -64,7 +64,7 @@ export default function Form(props) {
           placeholder="add end date"
           onChange={props.handleTextInput} />
         <br />
-{/* 
+
         <label>Stars</label>
         <input
           id="stars"
@@ -79,7 +79,7 @@ export default function Form(props) {
           value={review}
           placeholder="add review"
           onChange={props.handleTextInput} />
-        <br /> */} 
+        <br />
         
         <button>{props.type} Book</button>
 

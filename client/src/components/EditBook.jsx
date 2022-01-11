@@ -33,8 +33,9 @@ export default function EditBook() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fields = input;
-    const res = await api.post("/", { fields });
-    console.log(res.data);
+    // const res = await api.put("/", { fields });
+    // console.log(res.data);
+    await api.put(`${id}`, { fields });
     setInput(defaultInput);
     navigate("/");
     console.log(input);

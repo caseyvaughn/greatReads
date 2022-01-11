@@ -1,6 +1,7 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm, Controller } from "react-hook-form";
+import { Rating } from "react-simple-star-rating";
 
 
 export default function Form(props) {
@@ -56,13 +57,30 @@ export default function Form(props) {
           )} /> 
        
         <label>Stars</label>
+        <Rating
+          // onClick={console.log("star rating")}
+          onClick={(rating)=>{props.handleStarInput("starRating", rating)}}
+          // ratingValue={rating}
+          // onClick={props.handleStarInput; console.log("star rating")}
+          />
+        
+        
+        {/* <input
+          id="stars"
+          type="number"
+          value={stars}
+          placeholder="add stars"
+          onChange={props.handleStarInput} />
+        <br /> */}
+
+        {/* <label>Stars</label>
         <input
           id="stars"
           type="number"
           value={stars}
           placeholder="add stars"
           onChange={props.handleStarInput} />
-        <br />
+        <br /> */}
 
         <label>Review</label>
         <input

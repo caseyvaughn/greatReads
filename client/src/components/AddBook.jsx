@@ -2,6 +2,7 @@ import { useState} from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/apiConfig/index.js";
 import Form from "./Form";
+import { Rating } from "react-simple-star-rating";
 
 const defaultInput = {
   title: "",
@@ -41,13 +42,25 @@ export default function AddBook() {
     })
     )
   }
-  const handleStarInput = (e) => {
-    const { id, valueAsNumber } = e.target;
+  const handleStarInput = (id, rating) => {
+    // const { id, rate } = e.target;
+    const formattedRating = (rating / 20);
+    console.log(rating);
+    console.log(formattedRating);
     setInput((prevInput) => ({
       ...prevInput,
-      [id]: valueAsNumber,
+      [id]: rating,
     }))
   }
+
+  // const handleStarInput = (e) => {
+  //   const { id, value } = e.target;
+  //   console.log(value);
+  //   setInput((prevInput) => ({
+  //     ...prevInput,
+  //     [id]: value,
+  //   }))
+  // }
 
   return (
     <div>

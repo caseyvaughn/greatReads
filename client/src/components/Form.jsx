@@ -58,30 +58,9 @@ export default function Form(props) {
        
         <label>Stars</label>
         <Rating
-          // onClick={console.log("star rating")}
           onClick={(rating)=>{props.handleStarInput("stars", rating)}}
-          // ratingValue={rating}
-          // onClick={props.handleStarInput; console.log("star rating")}
           />
         
-        
-        {/* <input
-          id="stars"
-          type="number"
-          value={stars}
-          placeholder="add stars"
-          onChange={props.handleStarInput} />
-        <br /> */}
-
-        {/* <label>Stars</label>
-        <input
-          id="stars"
-          type="number"
-          value={stars}
-          placeholder="add stars"
-          onChange={props.handleStarInput} />
-        <br /> */}
-
         <label>Review</label>
         <input
           id="review"

@@ -4,6 +4,7 @@ import BookList from './components/BookList';
 import BookDetail from './components/ BookDetail';
 import Navbar from './components/Navbar';
 import AddBook from './components/AddBook';
+import EditBook from './components/EditBook';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<BookList />} />
         <Route path="/books/:id" element={<BookDetail />} />
-        <Route path="/books/:id/edit" element={<div>Edit Book</div>} />
+        <Route path="/books/:id/edit" element={<EditBook />} />
         <Route path = "/add" element={<AddBook />} />
       </Routes>
     </div>

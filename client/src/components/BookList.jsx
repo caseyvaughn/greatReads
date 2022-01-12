@@ -20,6 +20,7 @@ export default function BookList() {
         {books.map((book) => {
           return (
             <div>
+              {/* original code for displaying all books without react bootstrap
             <li key={book.id}>
               <div>
                 <Link to = {`/books/${book.id}`}>
@@ -31,14 +32,18 @@ export default function BookList() {
                 <h5>{book.fields.stars}</h5>
                 <p>{book.fields.review}</p>
               </div>
-            </li>
+            </li> */}
 
-            <Card>
+              <Card
+                style={{width: "18rem"}}>
                 <Card.Body>
                   <Card.Title>{book.fields.title}</Card.Title>
                   <Card.Text>{book.fields.author}</Card.Text>
-                  <Button>View Book</Button>
+                  <Link to={`/books/${book.id}`}>
+                    <Button>View Book</Button>
+                  </Link>
                 </Card.Body>
+              
               </Card>
             </div>
 

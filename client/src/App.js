@@ -2,9 +2,10 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import BookList from './components/BookList';
 import BookDetail from './components/ BookDetail';
-import Navbar from './components/Navbar';
+import NavbarComp from './components/Navbar';
 import AddBook from './components/AddBook';
 import EditBook from './components/EditBook';
+
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       {/* <header className="App-header">
         greatReads
       </header> */}
-      <Navbar />
+      <NavbarComp />
       <Routes>
         <Route path="/" element={<BookList />} />
         <Route path="/books/:id" element={<BookDetail />} />

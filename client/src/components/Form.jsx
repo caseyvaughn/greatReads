@@ -2,11 +2,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm, Controller } from "react-hook-form";
 import { Rating } from "react-simple-star-rating";
+import Button from "react-bootstrap/Button"
+import Alert from "react-bootstrap/Alert";
 
 
 export default function Form(props) {
   const { title, author, startDate, endDate, stars, review } = props.input;
-  const { handleSubmit, control, errors } = useForm();
+  const {control } = useForm();
  
   return (
     <div>
@@ -70,6 +72,10 @@ export default function Form(props) {
         <br /> 
         
         <button>{props.type} Book</button>
+
+        <Alert>This is a button</Alert>
+        <Button>{props.type} Book Bootstrap</Button>
+
       </form>
     </div>
   )

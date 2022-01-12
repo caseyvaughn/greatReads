@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import api from '../services/apiConfig/index.js';
 import { Link } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button"
 
 export default function BookList() {
   const [books, setBooks] = useState([]);
@@ -17,6 +19,7 @@ export default function BookList() {
       <ul>
         {books.map((book) => {
           return (
+            <div>
             <li key={book.id}>
               <div>
                 <Link to = {`/books/${book.id}`}>
@@ -29,6 +32,17 @@ export default function BookList() {
                 <p>{book.fields.review}</p>
               </div>
             </li>
+
+            <Card>
+                <Card.Body>
+                  <Card.Title>{book.fields.title}</Card.Title>
+                  <Card.Text>{book.fields.author}</Card.Text>
+                  <Button>View Book</Button>
+                </Card.Body>
+              </Card>
+            </div>
+
+            
         )
       })}
       </ul>

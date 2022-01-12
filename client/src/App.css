@@ -20,11 +20,10 @@
 .navlink {
   padding-left: 30px;
 }
-.row {
-  margin: 30px;
-}
+
 .card {
-  padding: 50px;
+  padding: 10px;
+  margin-bottom: 30px;
 }
 body {
   padding-top: 100px;

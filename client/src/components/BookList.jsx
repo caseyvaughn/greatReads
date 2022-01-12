@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button"
 import Container from 'react-bootstrap/Container';
-
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import "./Box.css"
+
 
 
 export default function BookList() {
@@ -22,7 +21,7 @@ export default function BookList() {
   }, [])
   return (
     <div>
-      <Container className="grid">
+      <Container className="grid" class="m-5 pb-5">
         <Row>
         {books.map((book) => {
           return (
@@ -49,18 +48,3 @@ export default function BookList() {
     </div>
   )
 }
-
-
-              {/* original code for displaying all books without react bootstrap
-            <li key={book.id}>
-              <div>
-                <Link to = {`/books/${book.id}`}>
-                  <h3>{book.fields.title}</h3>
-                </Link>
-                <h4>{book.fields.author}</h4>
-                <h5>{book.fields.startDate}</h5>
-                <h5>{book.fields.endDate}</h5>
-                <h5>{book.fields.stars}</h5>
-                <p>{book.fields.review}</p>
-              </div>
-            </li> */}

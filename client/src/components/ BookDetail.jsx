@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { Navigate, useNavigate, useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import api from '../services/apiConfig/index.js';
 import Delete from "./Delete.jsx";
-import EditBook from "./EditBook.jsx";
-
 
 export default function BookDetail() {
   const [book, setBook] = useState({});

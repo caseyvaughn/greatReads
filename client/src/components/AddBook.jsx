@@ -20,7 +20,8 @@ export default function AddBook() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fields = input;
-    const res = await api.post("/", { fields });
+    // const res = await api.post("/", { fields });
+    await api.post("/", { fields });
     setInput(defaultInput);
     navigate("/");
   }

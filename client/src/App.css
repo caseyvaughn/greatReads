@@ -17,11 +17,15 @@
   padding: 10px;
   justify-content: flex-end;
 }
-
 .navlink {
   padding-left: 30px;
 }
-
+.row {
+  margin: 30px;
+}
+.card {
+  padding: 50px;
+}
 body {
   padding-top: 100px;
 }

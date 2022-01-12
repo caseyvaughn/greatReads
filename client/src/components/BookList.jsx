@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button"
 import Container from 'react-bootstrap/Container';
+
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import "./Box.css"
 
 
 export default function BookList() {
@@ -20,14 +22,13 @@ export default function BookList() {
   }, [])
   return (
     <div>
-      {/* <ul> */}
-        <Container>
+      <Container className="grid">
         <Row>
-        
         {books.map((book) => {
           return (
+            // stack overflow explaining how to setup dynamic columns: https://stackoverflow.com/questions/57221956/how-to-map-items-in-row-with-react-bootstrap
+            <Col xs="12" sm="6" lg="4" xl="3">
             <div>
-              <Col large={5}>
               <Card
                 style={{ width: "18rem" }}
                 key={book.id}>
@@ -39,15 +40,12 @@ export default function BookList() {
                   </Link>
                 </Card.Body>
                 </Card>
-                </Col>
-              
-            </div> 
+              </div> 
+              </Col>
         )
         })}
-               
-                </Row>
+          </Row>
           </Container>
-      {/* </ul> */}
     </div>
   )
 }

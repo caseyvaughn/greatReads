@@ -6,13 +6,22 @@
   font-family: Lusitana;
 }
 
-.App-header {
-}
-
 .App-link {
   color: #61dafb;
 }
+.navbar {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.responsive-navbar {
+  padding: 10px;
+  justify-content: flex-end;
+}
+
+.navlink {
+  padding-left: 30px;
+}
 
 body {
-  padding-top: 100px; 
+  padding-top: 100px;
 }

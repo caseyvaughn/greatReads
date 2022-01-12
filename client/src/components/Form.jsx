@@ -64,7 +64,7 @@ export default function Form(props) {
               // selectsEnd
               // startDate={startDate}
               // endDate={endDate}
-              // minDate={startDate}
+              minDate={new Date(startDate)}
             />
           )} /> 
        

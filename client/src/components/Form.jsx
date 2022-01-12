@@ -55,6 +55,7 @@ export default function Form(props) {
               onChange={(date) => {props.handleDateInput("endDate", date)}}
               placeholderText="select end date"
               value={endDate}
+              minDate={startDate}
             />
           )} /> 
        

@@ -8,7 +8,7 @@ const defaultInput = {
   author: "",
   startDate: null,
   endDate: null,
-  stars: "",
+  stars: null,
   review: "",
 };
 

@@ -4,12 +4,13 @@ import api from "../services/apiConfig/index.js";
 import Form from "./Form";
 
 
+
 const defaultInput = {
   title: "",
   author: "",
-  startDate: "",
-  endDate: "",
-  stars: "",
+  startDate: null,
+  endDate: null,
+  stars: null,
   review: "",
 }
 export default function AddBook() {

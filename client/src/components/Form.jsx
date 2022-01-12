@@ -34,13 +34,17 @@ export default function Form(props) {
         <Controller
           id="startDate"
           control={control}
-          defaultValue={null} 
+          
           render={({ field }) => (
             <DatePicker
-              dateFormat = 'MM/dd/yyyy'
-              onChange={(date) => { props.handleDateInput("startDate", date)}}
+              defaultValue={null}
+              dateFormat='MM/dd/yyyy'
+              onChange={(date) => { props.handleDateInput("startDate", date) }}
               placeholderText="select start date"
               value={startDate}
+              // selectsStart
+              // startDate={startDate}
+              // endDate={endDate}
             />
           )} /> 
         
@@ -51,11 +55,16 @@ export default function Form(props) {
           defaultValue={null} 
           render={({ field }) => (
             <DatePicker
-              dateFormat = 'MM/dd/yyyy'
-              onChange={(date) => {props.handleDateInput("endDate", date)}}
+              defaultValue={null}
+              dateFormat='MM/dd/yyyy'
+              onChange={(date) => { props.handleDateInput("endDate", date) }}
               placeholderText="select end date"
               value={endDate}
-              minDate={startDate}
+              
+              // selectsEnd
+              // startDate={startDate}
+              // endDate={endDate}
+              // minDate={startDate}
             />
           )} /> 
        

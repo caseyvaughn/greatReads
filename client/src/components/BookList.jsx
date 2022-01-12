@@ -3,6 +3,10 @@ import api from '../services/apiConfig/index.js';
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button"
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 export default function BookList() {
   const [books, setBooks] = useState([]);
@@ -16,10 +20,39 @@ export default function BookList() {
   }, [])
   return (
     <div>
-      <ul>
+      {/* <ul> */}
+        <Container>
+        <Row>
+        
         {books.map((book) => {
           return (
             <div>
+              <Col large={5}>
+              <Card
+                style={{ width: "18rem" }}
+                key={book.id}>
+                <Card.Body>
+                  <Card.Title>{book.fields.title}</Card.Title>
+                  <Card.Text>{book.fields.author}</Card.Text>
+                  <Link to={`/books/${book.id}`}>
+                    <Button>View Book</Button>
+                  </Link>
+                </Card.Body>
+                </Card>
+                </Col>
+              
+            </div> 
+        )
+        })}
+               
+                </Row>
+          </Container>
+      {/* </ul> */}
+    </div>
+  )
+}
+
+
               {/* original code for displaying all books without react bootstrap
             <li key={book.id}>
               <div>
@@ -33,24 +66,3 @@ export default function BookList() {
                 <p>{book.fields.review}</p>
               </div>
             </li> */}
-
-              <Card
-                style={{width: "18rem"}}>
-                <Card.Body>
-                  <Card.Title>{book.fields.title}</Card.Title>
-                  <Card.Text>{book.fields.author}</Card.Text>
-                  <Link to={`/books/${book.id}`}>
-                    <Button>View Book</Button>
-                  </Link>
-                </Card.Body>
-              
-              </Card>
-            </div>
-
-            
-        )
-      })}
-      </ul>
-    </div>
-  )
-}

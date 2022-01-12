@@ -7,7 +7,7 @@ export default function NavbarComp() {
       <Navbar
         bg="dark"
         variant="dark"
-        sticky="top"
+        fixed="top"
         //expand makes navbar responsive; hamburger menu only shows up under medium sized
         expand="md"
       >
@@ -21,30 +21,6 @@ export default function NavbarComp() {
         </Navbar.Collapse>
       </Navbar>
       
-      {/* <Link to="/">
-        <h1>greatReads</h1>
-        </Link>
-      <ul>
-        <li>
-          <Link to="/">All Books</Link>
-        </li>
-        <li>
-          <Link to="/add">Add a Book</Link>
-          </li>
-      </ul> */}
-      
     </div>
   )
 }
-
-{/* <Link to="/">
-<h1>greatReads</h1>
-</Link>
-<ul>
-<li>
-  <Link to="/">All Books</Link>
-</li>
-<li>
-  <Link to="/add">Add a Book</Link>
-  </li>
-</ul> */}

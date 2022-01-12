@@ -6,13 +6,11 @@ import Form from "./Form";
 const defaultInput = {
   title: "",
   author: "",
-  startDate: "",
-  endDate: "",
+  startDate: null,
+  endDate: null,
   stars: "",
   review: "",
 };
-
-
 
 export default function EditBook() {
   const [input, setInput] = useState(defaultInput)
@@ -22,7 +20,6 @@ export default function EditBook() {
   useEffect(() => {
     const fetchBook= async () => {
       const res = await api.get(`/${id}`)
-      console.log(res);
       setInput(res.data.fields);
     }
     fetchBook();
@@ -33,12 +30,10 @@ export default function EditBook() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fields = input;
-    // const res = await api.put("/", { fields });
-    // console.log(res.data);
+    //changed from addBook; using put to update fields
     await api.put(`${id}`, { fields });
     setInput(defaultInput);
     navigate("/");
-    console.log(input);
   }
   const handleTextInput = (e) => {
     const { id, value } = e.target;

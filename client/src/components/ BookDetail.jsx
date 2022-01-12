@@ -13,7 +13,6 @@ export default function BookDetail() {
   useEffect(() => {
     const fetchBook = async () => {
       const res = await api.get(`/${id}`);
-      console.log(res.data);
       setBook(res.data);
     }
     fetchBook();

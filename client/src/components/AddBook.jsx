@@ -20,10 +20,8 @@ export default function AddBook() {
     e.preventDefault();
     const fields = input;
     const res = await api.post("/", { fields });
-    console.log(res.data);
     setInput(defaultInput);
     navigate("/");
-    console.log(input);
   }
   const handleTextInput = (e) => {
     const { id, value } = e.target;
@@ -53,6 +51,7 @@ export default function AddBook() {
 
   return (
     <div>
+      Add Book
       <Form
         input={input}
         handleTextInput={handleTextInput}

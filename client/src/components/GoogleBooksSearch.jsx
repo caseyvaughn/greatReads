@@ -3,14 +3,13 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import api from '../services/apiConfig/index.js';
 
-
 export default function GoogleBooksSearch() {
   const [book, setBook] = useState("");
   const [result, setResult] = useState([]);
   const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
-  const searchTerm = "intitle"
-  let search = "";
+  // const searchTerm = "intitle"
+  // let search = "";
 
   const handleChange = (e) => {
     const book = e.target.value;
@@ -21,13 +20,25 @@ export default function GoogleBooksSearch() {
     e.preventDefault();
     console.log(book);
 
+    let googleBooksURL=`https://www.googleapis.com/books/v1/volumes?q=${book}${GOOGLE_API_KEY}`
+  
+    // const res = axios.get(googleBooksURL)
+    // .then(data)
+    axios.get(googleBooksURL)
+      .then(data => {
+        // console.log(data)
+        console.log(data.data.items);
+        setResult(data.data.items);
+    } )
+
+    // console.log(res);
   }
 
-  const searchBooks = async () => {
-    let googleBooksURL=`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}${search}${GOOGLE_API_KEY}`
-    const res = await axios.get(googleBooksURL);
-    console.log(res.data);
-  }
+  // const searchBooks = async () => {
+  //   let googleBooksURL=`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}${search}${GOOGLE_API_KEY}`
+  //   const res = await axios.get(googleBooksURL);
+  //   console.log(res.data);
+  // }
   
   return (
     <div>
@@ -35,7 +46,10 @@ export default function GoogleBooksSearch() {
         <input type="text" placeholder="search a book" onChange={handleChange}></input>
         <button type = "submit">Search for Book</button>
       </form>
-      
+
+      {result.map(book => (
+        <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title}/>
+      ))} 
     </div>
   )
 }

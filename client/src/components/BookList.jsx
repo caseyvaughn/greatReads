@@ -19,9 +19,8 @@ export default function BookList() {
 
   useEffect(() => {
     const fetchBooks = async () => {
-      //adding query parameter to sort end date
-      //can expand this later to add different sort methods!!
-      // const sortField = 'endDate'
+      //used airtable API encoder to sort book list
+      //https://codepen.io/airtable/full/rLKkYB?baseId=appT3MFdDqZ1ffo0F&tableId=tblYtUeQquiXFRLuM
       const res = await api.get(`?sort%5B0%5D%5Bfield%5D=${sortParam}&sort%5B0%5D%5Bdirection%5D=asc`);
       setBooks(res.data.records);
     }
@@ -30,12 +29,12 @@ export default function BookList() {
 
   return (
     <div>
-      
-      <button onClick={() => { setSortParam("author") }}>Sort by Author's Firstname</button>
-      <button onClick={() => { setSortParam("title") }}>Sort by Title</button>
-      <button onClick={() => { setSortParam("endDate") }}>Sort by End Date</button>
-      <button onClick={() => { setSortParam("startDate") }}>Sort by Start Date</button>
-      <button onClick={() => { setSortParam("stars") }}>Sort by Star Rating</button>
+      <Button className="btn-sort" onClick={() => { setSortParam("startDate") }}>Sort by Start Date</Button>
+      <Button className="btn-sort" onClick={() => { setSortParam("endDate") }}>Sort by End Date</Button>
+      <Button className="btn-sort" onClick={() => { setSortParam("author") }}>Sort by Author's Firstname</Button>
+      <Button className="btn-sort" onClick={() => { setSortParam("title") }}>Sort by Title</Button>
+      <Button className="btn-sort" onClick={() => { setSortParam("stars") }}>Sort by Star Rating</Button>
+
       <Container className="grid" class="m-5 pb-5">
         <Row>
         {books.map((book) => {

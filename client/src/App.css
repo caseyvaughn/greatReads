@@ -28,3 +28,8 @@
 body {
   padding-top: 100px;
 }
+
+.btn-sort {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

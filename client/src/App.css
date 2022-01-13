@@ -33,3 +33,12 @@ body {
   margin-right: 10px;
   margin-bottom: 10px;
 }
+
+/* making book covers display the same size */
+/* https://stackoverflow.com/questions/49325210/how-to-make-two-different-images-similar-in-size-without-distortion/49325270#49325270 */
+.book-cover {
+  height: auto;
+  max-height: 300px;
+  width: auto;
+  max-width: 200px;
+}

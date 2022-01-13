@@ -12,15 +12,30 @@ import Col from 'react-bootstrap/Col';
 export default function BookList() {
   const [books, setBooks] = useState([]);
 
+  //add useState for sortParams; default state is to sort by end date
+  const [sortParam, setSortParam] = useState("endDate");
+  
+  
+
   useEffect(() => {
     const fetchBooks = async () => {
-      const res = await api.get();
+      //adding query parameter to sort end date
+      //can expand this later to add different sort methods!!
+      // const sortField = 'endDate'
+      const res = await api.get(`?sort%5B0%5D%5Bfield%5D=${sortParam}&sort%5B0%5D%5Bdirection%5D=asc`);
       setBooks(res.data.records);
     }
     fetchBooks();
-  }, [])
+  }, [sortParam])
+
   return (
     <div>
+      
+      <button onClick={() => { setSortParam("author") }}>Sort by Author's Firstname</button>
+      <button onClick={() => { setSortParam("title") }}>Sort by Title</button>
+      <button onClick={() => { setSortParam("endDate") }}>Sort by End Date</button>
+      <button onClick={() => { setSortParam("startDate") }}>Sort by Start Date</button>
+      <button onClick={() => { setSortParam("stars") }}>Sort by Star Rating</button>
       <Container className="grid" class="m-5 pb-5">
         <Row>
         {books.map((book) => {

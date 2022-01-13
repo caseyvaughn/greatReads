@@ -76,8 +76,6 @@ export default function Form(props) {
         <br /> 
         
         {/* <button>{props.type} Book</button> */}
-
-        
         <Button type="submit">{props.type} Book Bootstrap</Button>
 
       </form>

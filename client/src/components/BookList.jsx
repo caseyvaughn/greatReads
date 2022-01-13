@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button"
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 
 
@@ -15,8 +16,6 @@ export default function BookList() {
   //add useState for sortParams; default state is to sort by end date
   const [sortParam, setSortParam] = useState("endDate");
   
-  
-
   useEffect(() => {
     const fetchBooks = async () => {
       //used airtable API encoder to sort book list
@@ -29,11 +28,21 @@ export default function BookList() {
 
   return (
     <div>
-      <Button className="btn-sort" onClick={() => { setSortParam("startDate") }}>Sort by Start Date</Button>
+      {/* //add dropdown option for button sort drop down! */}
+      {/* <Button className="btn-sort" onClick={() => { setSortParam("startDate") }}>Sort by Start Date</Button>
       <Button className="btn-sort" onClick={() => { setSortParam("endDate") }}>Sort by End Date</Button>
       <Button className="btn-sort" onClick={() => { setSortParam("author") }}>Sort by Author's Firstname</Button>
       <Button className="btn-sort" onClick={() => { setSortParam("title") }}>Sort by Title</Button>
-      <Button className="btn-sort" onClick={() => { setSortParam("stars") }}>Sort by Star Rating</Button>
+      <Button className="btn-sort" onClick={() => { setSortParam("stars") }}>Sort by Star Rating</Button> */}
+      {/* //stackoverflow: how to use onClick with Dropdown.Item */}
+      <DropdownButton title="Sort Books">
+        <Dropdown.Item onClick={() => { setSortParam("startDate") }}>Start Date</Dropdown.Item>
+        <Dropdown.Item onClick={() => { setSortParam("endDate") }}>End Date</Dropdown.Item>
+        <Dropdown.Item onClick={() => { setSortParam("title") }}>Title</Dropdown.Item>
+        <Dropdown.Item onClick={() => { setSortParam("author") }}>Author's Firstname</Dropdown.Item>
+        <Dropdown.Item onClick={() => { setSortParam("stars") }}>Rating</Dropdown.Item>
+      </DropdownButton>
+
 
       <Container className="grid" class="m-5 pb-5">
         <Row>
@@ -47,7 +56,10 @@ export default function BookList() {
                 key={book.id}>
                 <Card.Body>
                   <Card.Title>{book.fields.title}</Card.Title>
-                  <Card.Text>{book.fields.author}</Card.Text>
+                    <Card.Text>{book.fields.author}</Card.Text>
+                    <Card.Text>{book.fields.startDate}</Card.Text>
+                    <Card.Text>{book.fields.endDate}</Card.Text>
+                    <Card.Text>{book.fields.stars}</Card.Text>
                   <Link to={`/books/${book.id}`}>
                     <Button>View Book</Button>
                   </Link>

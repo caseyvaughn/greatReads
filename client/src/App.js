@@ -16,7 +16,7 @@ function App() {
         greatReads
       </header> */}
       <NavbarComp />
-      <GoogleBooksSearch />
+      {/* <GoogleBooksSearch /> */}
       <Routes>
         <Route path="/" element={<BookList />} />
         <Route path="/books/:id" element={<BookDetail />} />

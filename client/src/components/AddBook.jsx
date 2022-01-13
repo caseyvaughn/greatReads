@@ -2,6 +2,7 @@ import { useState} from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/apiConfig/index.js";
 import Form from "./Form";
+import GoogleBooksSearch from "./GoogleBooksSearch.jsx";
 
 
 
@@ -14,6 +15,8 @@ const defaultInput = {
   review: "",
 }
 export default function AddBook() {
+
+  
   const [input, setInput] = useState(defaultInput)
   const navigate = useNavigate();
 
@@ -53,7 +56,7 @@ export default function AddBook() {
 
   return (
     <div>
-      Add Book
+      <GoogleBooksSearch />
       <Form
         input={input}
         handleTextInput={handleTextInput}

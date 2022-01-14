@@ -34,14 +34,6 @@ export default function GoogleBooksSearch({fetchBookData}) {
     console.log(title);
   }
 
-    //setting data to pass through childtoparent
-  // const data = "This is data from google books";
-  // const data = (book) => {
-    
-  //   data = book.volumeInfo.title;
-  // }
-
-
   return (
     <div>
       <form onSubmit={handleSubmit}>

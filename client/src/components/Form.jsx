@@ -32,6 +32,7 @@ export default function Form(props) {
           className={"form-item", "input-item"}/>
         <br />
 
+        <div className="date-input">
         <label className="form-item">Start Date</label>
         <DatePicker
           className={"form-item input-item"}
@@ -41,6 +42,7 @@ export default function Form(props) {
           placeholderText="select start date"
           value={startDate}
           />
+          </div>
          
         <label className="form-item">End Date</label>
         <DatePicker
@@ -57,6 +59,8 @@ export default function Form(props) {
        
         <label>Stars</label>
         <Rating
+          transition
+          allowHalfIcon
           className={"form-item input-item"}
           onClick={(rating)=>{props.handleStarInput("stars", rating)}}
         />

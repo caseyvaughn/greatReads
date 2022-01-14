@@ -52,6 +52,9 @@ body {
 .review-input {
   padding: 50px;
 }
+.date-input {
+  display: block;
+}
 /* button {
   padding: 10px 10px 10px 10px;
 } */

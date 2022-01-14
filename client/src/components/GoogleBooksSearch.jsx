@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import { Row, Col, Container, Button } from "react-bootstrap";
 import api from '../services/apiConfig/index.js';
 
-export default function GoogleBooksSearch() {
+export default function GoogleBooksSearch({fetchBookData}) {
   const [book, setBook] = useState("");
   const [result, setResult] = useState([]);
   const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
@@ -15,6 +15,11 @@ export default function GoogleBooksSearch() {
     const book = e.target.value;
     setBook(book);
   }
+
+  //setting data to pass through childtoparent
+  const data = "This is data from google books";
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,6 +66,7 @@ export default function GoogleBooksSearch() {
                     size="sm"
                     onClick={() => { handleSelectBook(book) }}>
                     Select Book</Button>
+                  <Button onClick={()=> fetchBookData(data)}>Child to Parent</Button>
                 </Card.Body>
               </Card>
             </div>

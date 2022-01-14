@@ -16,6 +16,29 @@ export default function AddBook() {
   const [input, setInput] = useState(defaultInput)
   const navigate = useNavigate();
 
+  // const handleSelectBook = async (book) => {
+  //   console.log()
+  //   setInput((prevInput) => ({
+  //     ...prevInput,
+  //     [id]: book,
+  //   }))
+  // }
+  //this is going to be input 
+  const [data, setData] = useState('');
+  // const childToParent = (childdata) => {
+  //   setData(childdata)
+  //   console.log("passed child to parent")
+  // }
+  const fetchBookData = (bookdata) => {
+    setData(bookdata)
+    console.log(bookdata)
+    console.log(data);
+  }
+  <GoogleBooksSearch fetchBookData={fetchBookData}/>
+  // <GoogleBooksSearch childToParent={childToParent} />
+  // <GoogleBooksSearch />
+  
+
     //handle google search results 
   // const handleSelectBook = async (book) => {
   //   setInput((prevInput) => ({
@@ -60,7 +83,7 @@ export default function AddBook() {
 
   return (
     <div>
-      <GoogleBooksSearch />
+      <GoogleBooksSearch fetchBookData={fetchBookData}/>
       <Form
         input={input}
         handleTextInput={handleTextInput}

@@ -5,18 +5,14 @@ import BookDetail from './components/ BookDetail';
 import NavbarComp from './components/Navbar';
 import AddBook from './components/AddBook';
 import EditBook from './components/EditBook';
-import GoogleBooksSearch from './components/GoogleBooksSearch';
+
 
 
 
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        greatReads
-      </header> */}
       <NavbarComp />
-      {/* <GoogleBooksSearch /> */}
       <Routes>
         <Route path="/" element={<BookList />} />
         <Route path="/books/:id" element={<BookDetail />} />

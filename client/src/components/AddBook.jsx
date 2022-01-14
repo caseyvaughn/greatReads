@@ -20,7 +20,7 @@ export default function AddBook() {
   //used to test fetching data from googlebookssearch
   const [data, setData] = useState('');
 
-  const fetchBookData = (id, book) => {
+  const fetchBookData = (book, id) => {
     //adding id argument to try to use setInput broke the book.volumeInfo.title! without id, it was able to const title
     // setData(book.volumeInfo.title)
     // console.log(bookdata)

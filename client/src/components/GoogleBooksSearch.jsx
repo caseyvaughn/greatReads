@@ -8,7 +8,6 @@ export default function GoogleBooksSearch({fetchBookData}) {
   const [book, setBook] = useState("");
   const [result, setResult] = useState([]);
   const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
-  // const searchTerm = "intitle:"
 
   const handleChange = (e) => {
     const book = e.target.value;
@@ -60,7 +59,7 @@ export default function GoogleBooksSearch({fetchBookData}) {
                         size="sm"
                         onClick={() => { handleSelectBook(book) }}>
                         Select Book</Button>
-                      <Button onClick={()=> fetchBookData(book)}>Child to Parent</Button>
+                      <Button onClick={()=> fetchBookData(book)}>Fetch Book Data</Button>
                     </Card.Body>
                   </Card>
                 </div>

@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import api from '../services/apiConfig/index.js';
 import { Link } from "react-router-dom";
-// import Card from "react-bootstrap/Card";
-// import Button from "react-bootstrap/Button"
-// import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
 import { Dropdown, DropdownButton, Card, Button, Container, Row, Col } from 'react-bootstrap';
 
 export default function BookList() {
@@ -26,7 +21,7 @@ export default function BookList() {
   return (
     <div>
       {/* //stackoverflow: how to use onClick with Dropdown.Item */}
-      <DropdownButton title="Sort Books">
+      <DropdownButton variant="dark" title="Sort Books" className="sort-books-btn">
         <Dropdown.Item onClick={() => { setSortParam("startDate") }}>Start Date</Dropdown.Item>
         <Dropdown.Item onClick={() => { setSortParam("endDate") }}>End Date</Dropdown.Item>
         <Dropdown.Item onClick={() => { setSortParam("title") }}>Title</Dropdown.Item>
@@ -51,7 +46,7 @@ export default function BookList() {
                     <Card.Text>{book.fields.endDate}</Card.Text>
                     <Card.Text>{book.fields.stars}</Card.Text>
                   <Link to={`/books/${book.id}`}>
-                    <Button>View Book</Button>
+                    <Button variant="outline-dark">View Book</Button>
                   </Link>
                 </Card.Body>
                 </Card>

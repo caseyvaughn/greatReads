@@ -19,14 +19,27 @@
 }
 .navlink {
   padding-left: 30px;
+  text-decoration: none;
+  color: black;
 }
-
+.dropdown {
+  display: flex;
+  margin: 20px 20px 20px 30px;
+}
 .card {
   padding: 10px;
   margin-bottom: 30px;
 }
+
+/* .grid {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  border: 10px;
+  border-color: blueviolet;
+} */
 body {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .btn-sort {

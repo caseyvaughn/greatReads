@@ -1,8 +1,13 @@
-import { NavLink } from "react-router-dom";
-import { Navbar } from "react-bootstrap"
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { NavLink, Link } from "react-router-dom";
+import { Navbar, Nav, NavItem } from "react-bootstrap"
+import { Dropdown, DropdownButton, Container } from 'react-bootstrap';
 
 export default function NavbarComp() {
+
+  const handleCollapse = () => {
+    console.log("handleCollapse");
+    // nav.classList.add("collapsed");
+  }
   return (
     <div>
       <Navbar
@@ -14,29 +19,29 @@ export default function NavbarComp() {
         expand="sm"
         className="navbar"
       >
-        {/* need navbar.toggle for hamburger menu to work properly */}
-        <Navbar.Toggle />
-        {/* <Link to="/"><h1>greatReads</h1></Link> */}
-        <NavLink to="/"><h1>greatReads</h1></NavLink>
-        
-        {/* <DropdownButton title="Sort Books">
-        <Dropdown.Item onClick={() => { setSortParam("startDate") }}>Start Date</Dropdown.Item>
-        <Dropdown.Item onClick={() => { setSortParam("endDate") }}>End Date</Dropdown.Item>
-        <Dropdown.Item onClick={() => { setSortParam("title") }}>Title</Dropdown.Item>
-        <Dropdown.Item onClick={() => { setSortParam("author") }}>Author's Firstname</Dropdown.Item>
-        <Dropdown.Item onClick={() => { setSortParam("stars") }}>Rating</Dropdown.Item>
-      </DropdownButton> */}
+        {/* <Container> */}
+          <Navbar.Brand>
+            <NavLink to="/" style={{ textDecoration: 'none', color: "black"}}><h1>greatReads</h1></NavLink>
+          </Navbar.Brand>
 
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav" className="responsive-navbar" >
+          <Nav className="mr-auto">
+                {/* <NavLink eventKey="1" className="navlink" to="/add" onClick={handleCollapse}>Add a Book</NavLink>
+                <NavLink eventKey = "2" className="navlink" to="/">View All Books</NavLink> */}
+            <NavItem>
+              <Nav.Link eventKey="1" className="navlink" as={Link} to="/add" onClick={handleCollapse}>
+                Add a Book</Nav.Link>
+            </NavItem>
 
-            {/* //styling for hamburger menu */}
-            <Navbar.Collapse className="responsive-navbar">
-              <NavLink className="navlink" to="/add">Add a Book</NavLink>
-              <NavLink className="navlink" to="/">View All Books</NavLink>
+            <NavItem>
+              <Nav.Link eventKey="2" className="navlink" as={Link} to="/">
+                View All Books</Nav.Link>
+            </NavItem>
+              </Nav>
             </Navbar.Collapse>
-        
-    
+        {/* </Container> */}
       </Navbar>
-      
     </div>
   )
 }

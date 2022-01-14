@@ -4,8 +4,6 @@ import api from "../services/apiConfig/index.js";
 import Form from "./Form";
 import GoogleBooksSearch from "./GoogleBooksSearch.jsx";
 
-
-
 const defaultInput = {
   title: "",
   author: "",
@@ -15,10 +13,16 @@ const defaultInput = {
   review: "",
 }
 export default function AddBook() {
-
-  
   const [input, setInput] = useState(defaultInput)
   const navigate = useNavigate();
+
+    //handle google search results 
+  // const handleSelectBook = async (book) => {
+  //   setInput((prevInput) => ({
+  //     ...prevInput,
+  //     [id]: book.volumeInfo.title,
+  //   }));
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();

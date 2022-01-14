@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 import api from '../services/apiConfig/index.js';
 import { Link } from "react-router-dom";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button"
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
-
-
+// import Card from "react-bootstrap/Card";
+// import Button from "react-bootstrap/Button"
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+import { Dropdown, DropdownButton, Card, Button, Container, Row, Col } from 'react-bootstrap';
 
 export default function BookList() {
   const [books, setBooks] = useState([]);
-
   //add useState for sortParams; default state is to sort by end date
   const [sortParam, setSortParam] = useState("endDate");
   
@@ -28,12 +25,6 @@ export default function BookList() {
 
   return (
     <div>
-      {/* //add dropdown option for button sort drop down! */}
-      {/* <Button className="btn-sort" onClick={() => { setSortParam("startDate") }}>Sort by Start Date</Button>
-      <Button className="btn-sort" onClick={() => { setSortParam("endDate") }}>Sort by End Date</Button>
-      <Button className="btn-sort" onClick={() => { setSortParam("author") }}>Sort by Author's Firstname</Button>
-      <Button className="btn-sort" onClick={() => { setSortParam("title") }}>Sort by Title</Button>
-      <Button className="btn-sort" onClick={() => { setSortParam("stars") }}>Sort by Star Rating</Button> */}
       {/* //stackoverflow: how to use onClick with Dropdown.Item */}
       <DropdownButton title="Sort Books">
         <Dropdown.Item onClick={() => { setSortParam("startDate") }}>Start Date</Dropdown.Item>
@@ -43,13 +34,12 @@ export default function BookList() {
         <Dropdown.Item onClick={() => { setSortParam("stars") }}>Rating</Dropdown.Item>
       </DropdownButton>
 
-
       <Container className="grid" class="m-5 pb-5">
         <Row>
         {books.map((book) => {
           return (
             // stack overflow explaining how to setup dynamic columns: https://stackoverflow.com/questions/57221956/how-to-map-items-in-row-with-react-bootstrap
-            <Col xs="12" sm="6" lg="4" xl="3">
+            <Col xs="12" sm="6" lg="4" xl="3" key={book.id}>
             <div>
               <Card
                 style={{ width: "18rem" }}

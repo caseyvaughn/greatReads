@@ -37,7 +37,7 @@ export default function GoogleBooksSearch({fetchBookData}) {
     <div>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="search a book" onChange={handleChange}></input>
-        <Button type = "submit"  variant="outline-primary" size="sm">Search for Book</Button>
+        <Button type = "submit"  variant="dark" size="sm">Search</Button>
       </form>
 
       <Container className="grid" class="m-5 pb-5" >

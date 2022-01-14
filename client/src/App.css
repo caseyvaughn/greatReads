@@ -31,22 +31,30 @@
   margin-bottom: 30px;
 }
 
-/* .grid {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  border: 10px;
-  border-color: blueviolet;
-} */
 body {
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 .btn-sort {
   margin-right: 10px;
   margin-bottom: 10px;
 }
+.form-btn {
+  margin-top: 10px;
+}
 
+.form-item {
+  margin-bottom: 10px;
+}
+.input-item {
+  margin-left: 20px;
+}
+.review-input {
+  padding: 50px;
+}
+/* button {
+  padding: 10px 10px 10px 10px;
+} */
 /* making book covers display the same size */
 /* https://stackoverflow.com/questions/49325210/how-to-make-two-different-images-similar-in-size-without-distortion/49325270#49325270 */
 .book-cover {

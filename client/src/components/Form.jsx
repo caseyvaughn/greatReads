@@ -13,43 +13,38 @@ export default function Form(props) {
  
   return (
     <div>
-      <form onSubmit={props.handleSubmit}>
-        <label>Title</label>
+      <form onSubmit={props.handleSubmit} >
+        <label className="form-item">Title</label>
         <input
           id="title"
           value={title}
           placeholder="add title"
-          onChange={props.handleTextInput} />
+          onChange={props.handleTextInput}
+          className={"form-item input-item"}/>
         <br />
 
-        <label>Author</label>
+        <label className="form-item">Author</label>
         <input
           id="author"
           value={author}
           placeholder="add author"
-          onChange={props.handleTextInput} />
+          onChange={props.handleTextInput}
+          className={"form-item", "input-item"}/>
         <br />
 
-        <label>Start Date</label>
-
-        <div className="form-group">
-        <label>Start Date</label>
+        <label className="form-item">Start Date</label>
         <DatePicker
+          className={"form-item input-item"}
           defaultValue={null}
           dateFormat='MM/dd/yyyy'
           onChange={(date) => { props.handleDateInput("startDate", date) }}
           placeholderText="select start date"
           value={startDate}
           />
-          </div>
-        
-        <label>End Date</label>
-        <Controller
-          id="endDate"
-          control={control}
-          defaultValue={null} 
-          render={({ field }) => (
-            <DatePicker
+         
+        <label className="form-item">End Date</label>
+        <DatePicker
+          className={"form-item input-item"}
               defaultValue={null}
               dateFormat='MM/dd/yyyy'
               onChange={(date) => { props.handleDateInput("endDate", date) }}
@@ -58,23 +53,25 @@ export default function Form(props) {
               //data validation for end date >= start date
               minDate={new Date(startDate)}
             />
-          )} /> 
+         
        
         <label>Stars</label>
         <Rating
+          className={"form-item input-item"}
           onClick={(rating)=>{props.handleStarInput("stars", rating)}}
         />
        <br />
         
         <label>Review</label>
         <input
+          className={"form-item input-item review-input"}
           id="review"
           height="50"
           value={review}
           placeholder="add review"
           onChange={props.handleTextInput} />
         <br /> 
-        <Button type="submit">{props.type} Book Bootstrap</Button>
+        <Button type="submit" variant="outline-dark" className="form-btn">{props.type} Book</Button>
 
       </form>
     </div>

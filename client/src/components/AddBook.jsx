@@ -16,41 +16,29 @@ export default function AddBook() {
   const [input, setInput] = useState(defaultInput)
   const navigate = useNavigate();
 
-  // const handleSelectBook = async (book) => {
-  //   console.log()
-  //   setInput((prevInput) => ({
-  //     ...prevInput,
-  //     [id]: book,
-  //   }))
-  // }
-  //this is going to be input 
+
+  //used to test fetching data from googlebookssearch
   const [data, setData] = useState('');
-  // const childToParent = (childdata) => {
-  //   setData(childdata)
-  //   console.log("passed child to parent")
-  // }
-  const fetchBookData = (bookdata) => {
-    setData(bookdata)
-    console.log(bookdata)
-    console.log(data);
+
+  const fetchBookData = (id, book) => {
+    //adding id argument to try to use setInput broke the book.volumeInfo.title! without id, it was able to const title
+    // setData(book.volumeInfo.title)
+    // console.log(bookdata)
+    const title = book.volumeInfo.title;
+    console.log(title);
+   
+    setInput((prevInput) => ({
+      ...prevInput,
+      [id]: title,
+    }));
+    console.log(input);
   }
   <GoogleBooksSearch fetchBookData={fetchBookData}/>
-  // <GoogleBooksSearch childToParent={childToParent} />
-  // <GoogleBooksSearch />
-  
 
-    //handle google search results 
-  // const handleSelectBook = async (book) => {
-  //   setInput((prevInput) => ({
-  //     ...prevInput,
-  //     [id]: book.volumeInfo.title,
-  //   }));
-  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fields = input;
-    // const res = await api.post("/", { fields });
     await api.post("/", { fields });
     setInput(defaultInput);
     navigate("/");

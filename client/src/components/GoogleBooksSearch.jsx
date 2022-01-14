@@ -1,9 +1,8 @@
 import axios from 'axios';
 import React from 'react'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Row, Col, Container, Button } from "react-bootstrap";
-import api from '../services/apiConfig/index.js';
 
 export default function GoogleBooksSearch({fetchBookData}) {
   const [book, setBook] = useState("");
@@ -16,11 +15,6 @@ export default function GoogleBooksSearch({fetchBookData}) {
     setBook(book);
   }
 
-  //setting data to pass through childtoparent
-  const data = "This is data from google books";
-
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
     let googleBooksURL = `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${GOOGLE_API_KEY}&maxResults=8`
@@ -32,12 +26,20 @@ export default function GoogleBooksSearch({fetchBookData}) {
     } )
   }
 
-//function to get selected book's information
+// function to get selected book's information
   const handleSelectBook = (book) => {
     const title = book.volumeInfo.title;
     const author = book.volumeInfo.authors;
     const thumbnail = book.volumeInfo.imageLinks.thumbnail;
+    console.log(title);
   }
+
+    //setting data to pass through childtoparent
+  // const data = "This is data from google books";
+  // const data = (book) => {
+    
+  //   data = book.volumeInfo.title;
+  // }
 
 
   return (
@@ -49,31 +51,31 @@ export default function GoogleBooksSearch({fetchBookData}) {
 
       <Container className="grid" class="m-5 pb-5" >
         <Row>
-      
-      {result.map((book) => {
-        return (
-          
-          <Col xs="12" sm="6" lg="4" xl="3" key={book.id}>
-          <div >
-              <Card style={{ width: "200px" }} >
-              <Card.Img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} variant="top" className="book-cover" />
-                <Card.Body>
-                  <Card.Text>{book.volumeInfo.title}</Card.Text>
-                  <Card.Text>{book.volumeInfo.authors}</Card.Text>
-                  <Button
-                    type="submit"
-                    variant="outline-primary"
-                    size="sm"
-                    onClick={() => { handleSelectBook(book) }}>
-                    Select Book</Button>
-                  <Button onClick={()=> fetchBookData(data)}>Child to Parent</Button>
-                </Card.Body>
-              </Card>
-            </div>
-            </Col>
-           
-        )
-      }
+
+          {result.map((book) => {
+            return (
+              
+              <Col xs="12" sm="6" lg="4" xl="3" key={book.id}>
+              <div >
+                  <Card style={{ width: "200px" }} >
+                  <Card.Img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} variant="top" className="book-cover" />
+                    <Card.Body>
+                      <Card.Text>{book.volumeInfo.title}</Card.Text>
+                      <Card.Text>{book.volumeInfo.authors}</Card.Text>
+                      <Button
+                        type="submit"
+                        variant="outline-primary"
+                        size="sm"
+                        onClick={() => { handleSelectBook(book) }}>
+                        Select Book</Button>
+                      <Button onClick={()=> fetchBookData(book)}>Child to Parent</Button>
+                    </Card.Body>
+                  </Card>
+                </div>
+                </Col>
+              
+            )
+          }
           )} 
           </Row>
         </Container>

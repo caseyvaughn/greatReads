@@ -11,27 +11,27 @@ const defaultInput = {
   endDate: null,
   stars: null,
   review: "",
+  thumbnail: "",
 }
 export default function AddBook() {
   const [input, setInput] = useState(defaultInput)
   const navigate = useNavigate();
 
 
-  //used to test fetching data from googlebookssearch
-  const [data, setData] = useState('');
+  // //used to test fetching data from googlebookssearch
+  // const [data, setData] = useState('');
 
   const fetchBookData = (book, id) => {
-    //adding id argument to try to use setInput broke the book.volumeInfo.title! without id, it was able to const title
-    // setData(book.volumeInfo.title)
-    // console.log(bookdata)
+
     const title = book.volumeInfo.title;
-    const author = book.volumeInfo.authors;
-    console.log(title);
+    const author = book.volumeInfo.authors[0];
+    const thumbnail = book.volumeInfo.imageLinks.thumbnail
    
     setInput((prevInput) => ({
       ...prevInput,
       ["title"]: title,
       ["author"]: author,
+      ["thumbnail"]: thumbnail,
     }));
     console.log(input);
   }

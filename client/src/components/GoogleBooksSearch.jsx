@@ -53,13 +53,17 @@ export default function GoogleBooksSearch({fetchBookData}) {
                     <Card.Body>
                       <Card.Text>{book.volumeInfo.title}</Card.Text>
                       <Card.Text>{book.volumeInfo.authors}</Card.Text>
-                      <Button
+                      {/* <Button
                         type="submit"
                         variant="outline-primary"
                         size="sm"
                         onClick={() => { handleSelectBook(book) }}>
+                        Select Book</Button> */}
+                      <Button
+                        variant="outline-primary"
+                        size="sm"
+                        onClick={() => fetchBookData(book)}>
                         Select Book</Button>
-                      <Button onClick={()=> fetchBookData(book)}>Fetch Book Data</Button>
                     </Card.Body>
                   </Card>
                 </div>

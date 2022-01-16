@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
-import { Row, Col, Container, Button } from "react-bootstrap";
+import { Row, Col, Container, Button, Collapse } from "react-bootstrap";
 
 export default function GoogleBooksSearch({fetchBookData}) {
   const [book, setBook] = useState("");
@@ -26,20 +26,22 @@ export default function GoogleBooksSearch({fetchBookData}) {
   }
 
 // function to get selected book's information
-  const handleSelectBook = (book) => {
-    const title = book.volumeInfo.title;
-    const author = book.volumeInfo.authors;
-    const thumbnail = book.volumeInfo.imageLinks.thumbnail;
-    console.log(title);
-  }
+  // const handleSelectBook = (book) => {
+  //   const title = book.volumeInfo.title;
+  //   const author = book.volumeInfo.authors;
+  //   const thumbnail = book.volumeInfo.imageLinks.thumbnail;
+  //   console.log(title);
+  // }
 
+  // const [visible, setVisible] = useState(false);visible={visible}
+  const [open, setOpen] = useState(false);
   return (
-    <div>
+    <Collapse in={!open}>
+    <div >
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="search a book" onChange={handleChange}></input>
         <Button type = "submit"  variant="dark" size="sm">Search</Button>
       </form>
-
       <Container className="grid" class="m-5 pb-5" >
         <Row>
 
@@ -62,7 +64,7 @@ export default function GoogleBooksSearch({fetchBookData}) {
                       <Button
                         variant="outline-primary"
                         size="sm"
-                        onClick={() => fetchBookData(book)}>
+                        onClick={() => { fetchBookData(book); setOpen(!open) }}>
                         Select Book</Button>
                     </Card.Body>
                   </Card>
@@ -74,6 +76,7 @@ export default function GoogleBooksSearch({fetchBookData}) {
           )} 
           </Row>
         </Container>
-    </div>
+      </div>
+      </Collapse>
   )
 }

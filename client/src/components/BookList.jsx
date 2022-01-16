@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from '../services/apiConfig/index.js';
 import { Link } from "react-router-dom";
 import { Dropdown, DropdownButton, Card, Button, Container, Row, Col } from 'react-bootstrap';
+import { Rating } from "react-simple-star-rating";
 
 export default function BookList() {
   const [books, setBooks] = useState([]);
@@ -39,12 +40,15 @@ export default function BookList() {
               <Card
                 style={{ width: "18rem" }}
                 key={book.id}>
-                <Card.Body>
-                  <Card.Title>{book.fields.title}</Card.Title>
+                  <Card.Body>
+                    <Card.Img className="book-thumbnail" src={book.fields.thumbnail} alt={book.fields.title}/>
+                    <Card.Title>{book.fields.title}</Card.Title>
                     <Card.Text>{book.fields.author}</Card.Text>
                     <Card.Text>{book.fields.startDate}</Card.Text>
                     <Card.Text>{book.fields.endDate}</Card.Text>
                     <Card.Text>{book.fields.stars}</Card.Text>
+                    <Rating />
+                    
                   <Link to={`/books/${book.id}`}>
                     <Button variant="outline-dark">View Book</Button>
                   </Link>

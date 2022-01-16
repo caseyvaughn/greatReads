@@ -23,6 +23,7 @@ export default function BookDetail() {
 
   return (
     <div>
+      <img className = "book-thumbnail" src={book.fields.thumbnail} alt={book.fields.title}></img>
       <h4>{book.fields?.title}</h4>
       <h5>{book.fields?.author}</h5>
       <h5>{book.fields?.startDate}</h5>

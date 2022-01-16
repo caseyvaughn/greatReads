@@ -35,7 +35,7 @@ export default function BookList() {
           return (
             // stack overflow explaining how to setup dynamic columns: https://stackoverflow.com/questions/57221956/how-to-map-items-in-row-with-react-bootstrap
             <Col xs="12" sm="6" lg="4" xl="3" key={book.id}>
-            <div>
+            <div className="book-list-card">
               <Card
                 style={{ width: "18rem" }}
                 key={book.id}>

@@ -25,14 +25,17 @@ export default function AddBook() {
     // setData(book.volumeInfo.title)
     // console.log(bookdata)
     const title = book.volumeInfo.title;
+    const author = book.volumeInfo.authors;
     console.log(title);
    
     setInput((prevInput) => ({
       ...prevInput,
-      [id]: title,
+      ["title"]: title,
+      ["author"]: author,
     }));
     console.log(input);
   }
+
   <GoogleBooksSearch fetchBookData={fetchBookData}/>
 
 

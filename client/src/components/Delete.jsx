@@ -2,7 +2,6 @@ import api from "../services/apiConfig";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
-
 export default function Delete(props) {
   const navigate = useNavigate();
 

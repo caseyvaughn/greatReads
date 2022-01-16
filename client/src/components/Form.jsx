@@ -1,15 +1,12 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useForm, Controller } from "react-hook-form";
+// import { useForm} from "react-hook-form";
 import { Rating } from "react-simple-star-rating";
 import Button from "react-bootstrap/Button"
-import Alert from "react-bootstrap/Alert";
-// import { Form } from "react-bootstrap"
-
 
 export default function Form(props) {
   const { title, author, startDate, endDate, stars, review } = props.input;
-  const {control } = useForm();
+  // const {control } = useForm();
  
   return (
     <div>
@@ -32,7 +29,6 @@ export default function Form(props) {
           className={"form-item", "input-item"}/>
         <br />
 
-        <div className="date-input">
         <label className="form-item">Start Date</label>
         <DatePicker
           className={"form-item input-item"}
@@ -40,10 +36,8 @@ export default function Form(props) {
           dateFormat='MM/dd/yyyy'
           onChange={(date) => { props.handleDateInput("startDate", date) }}
           placeholderText="select start date"
-          value={startDate}
-          />
-          </div>
-         
+          value={startDate}/>
+   
         <label className="form-item">End Date</label>
         <DatePicker
           className={"form-item input-item"}
@@ -56,7 +50,6 @@ export default function Form(props) {
               minDate={new Date(startDate)}
             />
          
-       
         <label>Stars</label>
         <Rating
           transition

@@ -33,7 +33,6 @@ export default function GoogleBooksSearch({fetchBookData}) {
   //   console.log(title);
   // }
 
-  // const [visible, setVisible] = useState(false);visible={visible}
   const [open, setOpen] = useState(false);
   return (
     <Collapse in={!open}>
@@ -44,10 +43,8 @@ export default function GoogleBooksSearch({fetchBookData}) {
       </form>
       <Container className="grid" class="m-5 pb-5" >
         <Row>
-
           {result.map((book) => {
             return (
-              
               <Col xs="12" sm="6" lg="4" xl="3" key={book.id}>
               <div >
                   <Card style={{ width: "200px" }} >
@@ -55,12 +52,6 @@ export default function GoogleBooksSearch({fetchBookData}) {
                     <Card.Body>
                       <Card.Text>{book.volumeInfo.title}</Card.Text>
                       <Card.Text>{book.volumeInfo.authors}</Card.Text>
-                      {/* <Button
-                        type="submit"
-                        variant="outline-primary"
-                        size="sm"
-                        onClick={() => { handleSelectBook(book) }}>
-                        Select Book</Button> */}
                       <Button
                         variant="outline-primary"
                         size="sm"
@@ -70,7 +61,6 @@ export default function GoogleBooksSearch({fetchBookData}) {
                   </Card>
                 </div>
                 </Col>
-              
             )
           }
           )} 

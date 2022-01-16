@@ -23,11 +23,11 @@ export default function BookDetail() {
 
   return (
     <div>
-      <img className = "book-thumbnail" src={book.fields.thumbnail} alt={book.fields.title}></img>
-      <h4>{book.fields?.title}</h4>
+      <img className = "book-thumbnail" src={book.fields?.thumbnail} alt={book.fields?.title}></img>
+      <h5>{book.fields?.title}</h5>
       <h5>{book.fields?.author}</h5>
-      <h5>{book.fields?.startDate}</h5>
-      <h5>{book.fields?.endDate}</h5>
+      <h5>Start Date: {book.fields?.startDate}</h5>
+      <h5>End Date: {book.fields?.endDate}</h5>
       <h5>{book.fields?.stars}</h5>
       <p>{book.fields?.review}</p>
       <button onClick={routeEditBook}>Edit Book</button>

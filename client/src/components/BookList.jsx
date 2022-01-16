@@ -38,16 +38,15 @@ export default function BookList() {
             <Col xs="12" sm="6" lg="4" xl="3" key={book.id}>
             <div className="book-list-card">
               <Card
-                style={{ width: "18rem" }}
+                style={{ width: "18rem", height: "30rem" }}
                 key={book.id}>
                   <Card.Body>
                     <Card.Img className="book-thumbnail" src={book.fields.thumbnail} alt={book.fields.title}/>
-                    <Card.Title>{book.fields.title}</Card.Title>
-                    <Card.Text>{book.fields.author}</Card.Text>
-                    <Card.Text>{book.fields.startDate}</Card.Text>
-                    <Card.Text>{book.fields.endDate}</Card.Text>
+                    {/* <Card.Text>{book.fields.title}</Card.Text>
+                    <Card.Text>{book.fields.author}</Card.Text> */}
+                    <Card.Text>Start Date: {book.fields.startDate}</Card.Text>
+                    <Card.Text>End Date: {book.fields.endDate}</Card.Text>
                     <Card.Text>{book.fields.stars}</Card.Text>
-                    <Rating />
                     
                   <Link to={`/books/${book.id}`}>
                     <Button variant="outline-dark">View Book</Button>

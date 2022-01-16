@@ -46,6 +46,7 @@ export default function Form(props) {
               onChange={(date) => { props.handleDateInput("endDate", date) }}
               placeholderText="select end date"
               value={endDate}
+              openToDate={new Date(startDate)}
               //data validation for end date >= start date
               minDate={new Date(startDate)}
             />

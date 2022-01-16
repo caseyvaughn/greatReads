@@ -1,5 +1,6 @@
 import api from "../services/apiConfig";
 import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 
 export default function Delete(props) {
@@ -11,7 +12,7 @@ export default function Delete(props) {
   }
   return (
     <div>
-      <button onClick={handleDelete}>Delete Book</button>
+      <Button className= "btn-detail" variant="dark" onClick={handleDelete}>Delete Book</Button>
     </div>
   )
 }

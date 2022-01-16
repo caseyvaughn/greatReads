@@ -35,6 +35,10 @@ body {
   padding-top: 100px;
 }
 
+.btn-detail {
+  margin: 5px 5px 5px 5px;
+}
+
 .btn-sort {
   margin-right: 10px;
   margin-bottom: 10px;
@@ -55,10 +59,7 @@ body {
 .date-input {
   display: block;
 }
-/* button {
-  padding: 10px 10px 10px 10px;
-} */
-/* making book covers display the same size */
+
 /* https://stackoverflow.com/questions/49325210/how-to-make-two-different-images-similar-in-size-without-distortion/49325270#49325270 */
 .book-cover {
   height: auto;
@@ -72,4 +73,8 @@ body {
   width: auto;
   max-width: 160px;
   margin: 10px;
+}
+
+.card-text {
+  margin: 5px 5px 5px 5px;
 }

@@ -3,6 +3,8 @@ import api from '../services/apiConfig/index.js';
 import { Link } from "react-router-dom";
 import { Dropdown, DropdownButton, Card, Button, Container, Row, Col } from 'react-bootstrap';
 import { Rating } from "react-simple-star-rating";
+import { FaStar } from "react-icons/fa";
+
 
 export default function BookList() {
   const [books, setBooks] = useState([]);
@@ -38,7 +40,7 @@ export default function BookList() {
             <Col xs="12" sm="6" lg="4" xl="3" key={book.id}>
             <div className="book-list-card">
               <Card
-                style={{ width: "18rem", height: "30rem" }}
+                style={{ width: "250px", height: "450px" }}
                 key={book.id}>
                   <Card.Body>
                     <Card.Img className="book-thumbnail" src={book.fields.thumbnail} alt={book.fields.title}/>
@@ -46,8 +48,9 @@ export default function BookList() {
                     <Card.Text>{book.fields.author}</Card.Text> */}
                     <Card.Text>Start Date: {book.fields.startDate}</Card.Text>
                     <Card.Text>End Date: {book.fields.endDate}</Card.Text>
-                    <Card.Text>{book.fields.stars}</Card.Text>
-                    
+                    <Rating
+                    className="form-item"
+                    initialValue={book.fields.stars}/>
                   <Link to={`/books/${book.id}`}>
                     <Button variant="outline-dark">View Book</Button>
                   </Link>

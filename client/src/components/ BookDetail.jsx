@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import api from '../services/apiConfig/index.js';
 import Delete from "./Delete.jsx";
+import { Button } from "react-bootstrap"
 
 export default function BookDetail() {
   const [book, setBook] = useState({});
@@ -25,12 +26,12 @@ export default function BookDetail() {
     <div>
       <img className = "book-thumbnail" src={book.fields?.thumbnail} alt={book.fields?.title}></img>
       <h5>{book.fields?.title}</h5>
-      <h5>{book.fields?.author}</h5>
-      <h5>Start Date: {book.fields?.startDate}</h5>
-      <h5>End Date: {book.fields?.endDate}</h5>
+      <h5 >{book.fields?.author}</h5>
+      <h6>Start Date: {book.fields?.startDate}</h6>
+      <h6>End Date: {book.fields?.endDate}</h6>
       <h5>{book.fields?.stars}</h5>
       <p>{book.fields?.review}</p>
-      <button onClick={routeEditBook}>Edit Book</button>
+      <Button variant="outline-dark" onClick={routeEditBook}>Edit Book</Button>
       <Delete id={id}/>
     </div>
   )

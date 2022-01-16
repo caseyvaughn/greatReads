@@ -19,17 +19,6 @@ export default function BookList() {
     fetchBooks();
   }, [sortParam])
 
-  
-
-  // if (book.fields?.endDate === undefined){
-  //   return <h6>Currently Reading </h6>
-  // }else {
-  // return <h6 className="current-reads">End Date: {book.fields?.endDate}</h6>
-  // }
-  
-  // book.fields?.endDate === undefined ? <h6>Currently Reading </h6> : <h6>End Date: {book.fields?.endDate}</h6>
-
-
   return (
     <div>
       <DropdownButton variant="dark" title="Sort Books" className="sort-books-btn">
@@ -53,7 +42,6 @@ export default function BookList() {
                   <Card.Body>
                     <Card.Img className="book-thumbnail" src={book.fields.thumbnail} alt={book.fields.title}/>
                     <Card.Text>Start Date: {book.fields.startDate}</Card.Text>
-                    {/* <Card.Text>End Date: {book.fields.endDate}</Card.Text> */}
                     {book.fields?.endDate === undefined ? <h6>Currently Reading </h6> : <h6>End Date: {book.fields?.endDate}</h6>}
                     <Rating
                     className="form-item"

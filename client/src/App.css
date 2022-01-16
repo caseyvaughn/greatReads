@@ -78,3 +78,7 @@ body {
 .card-text {
   margin: 5px 5px 5px 5px;
 }
+.book-list-card {
+  display: flex;
+  justify-content: center;
+}

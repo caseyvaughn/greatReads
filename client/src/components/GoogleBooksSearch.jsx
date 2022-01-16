@@ -25,14 +25,6 @@ export default function GoogleBooksSearch({fetchBookData}) {
     } )
   }
 
-// function to get selected book's information
-  // const handleSelectBook = (book) => {
-  //   const title = book.volumeInfo.title;
-  //   const author = book.volumeInfo.authors;
-  //   const thumbnail = book.volumeInfo.imageLinks.thumbnail;
-  //   console.log(title);
-  // }
-
   const [open, setOpen] = useState(false);
   return (
     <Collapse in={!open}>
@@ -48,7 +40,7 @@ export default function GoogleBooksSearch({fetchBookData}) {
               <Col xs="12" sm="6" lg="4" xl="3" key={book.id}>
               <div >
                   <Card style={{ width: "200px" }} >
-                  <Card.Img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} variant="top" className="book-cover" />
+                  <Card.Img src={book.volumeInfo.imageLinks?.thumbnail} alt={book.title} variant="top" className="book-cover" />
                     <Card.Body>
                       <Card.Text>{book.volumeInfo.title}</Card.Text>
                       <Card.Text>{book.volumeInfo.authors}</Card.Text>

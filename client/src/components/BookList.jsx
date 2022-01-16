@@ -3,8 +3,6 @@ import api from '../services/apiConfig/index.js';
 import { Link } from "react-router-dom";
 import { Dropdown, DropdownButton, Card, Button, Container, Row, Col } from 'react-bootstrap';
 import { Rating } from "react-simple-star-rating";
-import { FaStar } from "react-icons/fa";
-
 
 export default function BookList() {
   const [books, setBooks] = useState([]);
@@ -23,7 +21,6 @@ export default function BookList() {
 
   return (
     <div>
-      {/* //stackoverflow: how to use onClick with Dropdown.Item */}
       <DropdownButton variant="dark" title="Sort Books" className="sort-books-btn">
         <Dropdown.Item onClick={() => { setSortParam("startDate") }}>Start Date</Dropdown.Item>
         <Dropdown.Item onClick={() => { setSortParam("endDate") }}>End Date</Dropdown.Item>
@@ -44,8 +41,6 @@ export default function BookList() {
                 key={book.id}>
                   <Card.Body>
                     <Card.Img className="book-thumbnail" src={book.fields.thumbnail} alt={book.fields.title}/>
-                    {/* <Card.Text>{book.fields.title}</Card.Text>
-                    <Card.Text>{book.fields.author}</Card.Text> */}
                     <Card.Text>Start Date: {book.fields.startDate}</Card.Text>
                     <Card.Text>End Date: {book.fields.endDate}</Card.Text>
                     <Rating

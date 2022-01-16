@@ -1,12 +1,10 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import { useForm} from "react-hook-form";
 import { Rating } from "react-simple-star-rating";
 import Button from "react-bootstrap/Button"
 
 export default function Form(props) {
   const { title, author, startDate, endDate, stars, review } = props.input;
-  // const {control } = useForm();
  
   return (
     <div>

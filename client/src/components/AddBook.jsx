@@ -17,10 +17,6 @@ export default function AddBook() {
   const [input, setInput] = useState(defaultInput)
   const navigate = useNavigate();
 
-
-  // //used to test fetching data from googlebookssearch
-  // const [data, setData] = useState('');
-
   const fetchBookData = (book, id) => {
 
     const title = book.volumeInfo.title;
@@ -37,7 +33,6 @@ export default function AddBook() {
   }
 
   <GoogleBooksSearch fetchBookData={fetchBookData}/>
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,8 +55,7 @@ export default function AddBook() {
     setInput((prevInput) => ({
       ...prevInput,
       [id]: formattedDate,
-    })
-    )
+    }))
   }
   const handleStarInput = (id, rating) => {
     //star rating returns ratings out of 100 (ex. 5 stars = 100); need to divide by 20

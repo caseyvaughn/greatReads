@@ -4,7 +4,7 @@ import { Rating } from "react-simple-star-rating";
 import Button from "react-bootstrap/Button"
 
 export default function Form(props) {
-  const { title, author, startDate, endDate, stars, review } = props.input;
+  const { title, author, startDate, endDate, review } = props.input;
  
   return (
     <div>
@@ -24,7 +24,7 @@ export default function Form(props) {
           value={author}
           placeholder="add author"
           onChange={props.handleTextInput}
-          className={"form-item", "input-item"}/>
+          className={"form-item input-item"}/>
         <br />
 
         <label className="form-item">Start Date</label>

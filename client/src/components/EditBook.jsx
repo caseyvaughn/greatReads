@@ -23,7 +23,7 @@ export default function EditBook() {
       setInput(res.data.fields);
     }
     fetchBook();
-  }, []);
+  }, [id]);
 
 
   //copied code from AddBook

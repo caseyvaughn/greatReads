@@ -25,9 +25,9 @@ export default function AddBook() {
    
     setInput((prevInput) => ({
       ...prevInput,
-      ["title"]: title,
-      ["author"]: author,
-      ["thumbnail"]: thumbnail,
+      "title": title,
+      "author": author,
+      "thumbnail": thumbnail,
     }));
     console.log(input);
   }

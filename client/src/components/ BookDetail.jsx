@@ -19,7 +19,7 @@ export default function BookDetail() {
       setBook(res.data);
     }
     fetchBook();
-  }, []);
+  }, [id]);
 
   console.log(book.fields?.endDate);
 

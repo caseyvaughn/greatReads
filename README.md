@@ -13,7 +13,7 @@ Deployed site: https://caseys-great-reads.netlify.app/
 - HTML
 
 ## User Experience
-- The homepage displays the books the user is currently read or has read. Selecting "view book" navigates to the book's detail page where the user can view and edit their reading and review information. The user can add a new book and log the title, author, start date, end date, number of stars, and a short text review.
+The homepage displays the books the user is currently read or has read. Selecting "view book" navigates to the book's detail page where the user can view and edit their reading and review information. The user can add a new book and log the title, author, start date, end date, number of stars, and a short text review.
 
 ## What's Next ...
 - Building a backend for user authorization & authentication
